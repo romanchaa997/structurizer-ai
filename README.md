@@ -73,7 +73,55 @@ src/
 ### Vercel
 
 ```bash
-npm i -g vercel
+npm i -
+
+### Cloudflare Pages (Recommended)
+
+Cloudflare Pages offers:**
+- **Global CDN** with automatic caching at edge
+- **Auto-deploy** from GitHub on every push
+- **Workers integration** for serverless functions
+- **Built-in SSL/TLS** with automatic renewal
+- **Zero-cost** for hobby projects
+- **99.9% uptime SLA**
+
+#### Setup Steps:
+
+1. **Connect to Cloudflare Pages:**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+   - Navigate to **Workers & Pages**
+   - Click **Create application**
+   - Select **Pages** tab
+   - Connect your GitHub repository `structurizer-ai`
+
+2. **Configure Build Settings:**
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Node.js version: 20
+
+3. **Set Environment Variables:**
+   - In Cloudflare Pages Settings → **Variables and Secrets**
+   - Add `GEMINI_API_KEY` with your Gemini API key
+   - Choose **Production** environment
+
+4. **Auto-Deployment:**
+   - Every push to `main` branch triggers automatic build
+   - Cloudflare Pages shows build logs in real-time
+   - Deploy preview URLs for every PR
+
+#### Custom Domain (Optional):
+
+```
+# In Cloudflare Pages → Settings → Domains & Routes
+# Add your custom domain (if you own one)
+# CNAME: structurizer-ai.<account>.pages.dev
+```
+
+#### Live Demo:
+
+```
+https://structurizer-ai.romanchaa997.workers.dev
+```g vercel
 vercel login
 vercel --prod
 ```
