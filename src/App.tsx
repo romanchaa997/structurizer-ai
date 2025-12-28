@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { createRoot } from "react-dom/client";
 import { GoogleGenAI } from "@google/genai";
 import { marked } from "marked";
 
@@ -1363,5 +1362,5 @@ const App = () => {
   );
 };
 
-const root = createRoot(document.getElementById("root")!);
-root.render(<App />);
+export default App;
+
